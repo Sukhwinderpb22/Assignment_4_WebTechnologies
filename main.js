@@ -30,14 +30,14 @@ app.get("/", (req, res) => {
 // GET all products
 app.get("/product", (req, res) => {
   Product.find()
-    .then(products => res.json(products)));
+    .then(products => res.json(products));
 });
 
 // POST a new product
 app.post("/product", (req, res) => {
   const newProduct = new Product(req.body);
   newProduct.save()
-    .then(product => res.status(201).json(product)));
+    .then(product => res.status(201).json(product));
 });
 
 // DELETE a product
